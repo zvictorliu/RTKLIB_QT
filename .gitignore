@@ -1,0 +1,8 @@
+.vscode/
+!/.vscode/tasks.json
+output/
+debug/
+app/rnx2rtkp/gcc/
+!app/rnx2rtkp/gcc/makefile
+lib/
+bin/
