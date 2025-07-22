@@ -412,10 +412,10 @@ int main(int argc, char **argv)
     // 导入当前路径
     PyRun_SimpleString("import  sys");
     PyRun_SimpleString("import  os");
+    PyRun_SimpleString("print('python module path:', os.getcwd())");
     PyRun_SimpleString("sys.path.append(os.getcwd())");
     // 模块路径
-    PyRun_SimpleString("sys.path.append('/home/zongwei/ws/projects/gnss_analyze/apps/positioning')");
-    PyRun_SimpleString("sys.path.append('/home/zongwei/ws/projects/gnss_analyze')");
+    PyRun_SimpleString("sys.path.append(f'{os.getcwd()}/apps/positioning')");
     
     pName = PyUnicode_DecodeFSDefault("asset");
     pModule = PyImport_Import(pName);

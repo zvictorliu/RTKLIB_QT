@@ -6,3 +6,5 @@ app/rnx2rtkp/gcc/
 !app/rnx2rtkp/gcc/makefile
 lib/
 bin/
+
+.env*

@@ -1,10 +1,8 @@
 # makefile for rnx2rtkp
 BINDIR  = ../../../bin
 SRC     = ../../../src
-# for Python.h
-PYTHON_INC = /home/zongwei/.local/miniconda3/envs/myenv/include/python3.13
-PYTHON_LIB = /home/zongwei/.local/miniconda3/envs/myenv/lib
-PYTHON_VER = 3.13
+
+include ../../../.env
 
 OPTS    = -DTRACE -DENAGLO  -DENAQZS -DENAGAL -DENABDS  -DNFREQ=4   -DNEXOBS=3
 
@@ -15,7 +13,7 @@ UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S), Darwin) # mac
 	LDLIBS  = -lm
 else
-	LDLIBS  = -lm -lrt -L$(PYTHON_LIB) -lpython$(PYTHON_VER)
+	LDLIBS  = -lm -lrt -L$(PYTHON_LIB) -l$(PYTHON_BIN)
 endif
 
 #LDLIBS  = ../../../lib/iers/gcc/iers.a -lgfortran -lm -lrt
