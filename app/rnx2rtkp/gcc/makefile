@@ -6,6 +6,9 @@ include ../../../.env
 
 OPTS    = -DTRACE -DENAGLO  -DENAQZS -DENAGAL -DENABDS  -DNFREQ=4   -DNEXOBS=3
 
+# set python lib path
+LDFLAGS = -Wl,-rpath,$(PYTHON_LIB)
+
 # for no lapack
 CFLAGS  = -Wall -O3 -pedantic -Wno-unused-but-set-variable -I$(SRC) $(OPTS) -g -std=c11 -I$(PYTHON_INC)
 
