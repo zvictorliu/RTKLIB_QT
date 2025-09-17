@@ -60,7 +60,7 @@ extern "C"
 
     /* constants -----------------------------------------------------------------*/
 
-#define VER_RTKLIB "demo5" /* library version */
+#define VER_RTKLIB "demo5(xiang's QT version)" /* library version */
 
 #define PATCH_LEVEL "b33b2" /* patch level */
 
