@@ -184,7 +184,7 @@ extern "C"
 #endif
 #ifdef ENABDS
 #define MINPRNBDS 1                         /* min satellite sat number of BeiDou */
-#define MAXPRNBDS 80                        /* max satellite sat number of BeiDou */
+#define MAXPRNBDS 46                        /* max satellite sat number of BeiDou (not supportting C59,C60...) */
 #define NSATBDS (MAXPRNBDS - MINPRNBDS + 1) /* number of BeiDou satellites */
 #define NSYSBDS 1
 #else
