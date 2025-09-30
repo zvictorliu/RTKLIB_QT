@@ -478,11 +478,15 @@ static int valsol(const double *azel, const int *vsat, int n,
     tracemat(4, azels, 2, ns, 2, 4);
 
     dops(ns, azels, opt->elmin, dop);
-     /* STORE HDOP */
+     /* store dops info */
+    sprintf(dop_msg, "%.3f", dop[0]);
+    store_info(time, "GDOP", dop_msg); // gdop
     sprintf(dop_msg, "%.3f", dop[1]);
-    store_info(time, "DOP", dop_msg); // pdop
+    store_info(time, "PDOP", dop_msg); // pdop
     sprintf(dop_msg, "%.3f", dop[2]);
-    store_info(time, "DOP", dop_msg); // hdop
+    store_info(time, "HDOP", dop_msg); // hdop
+    sprintf(dop_msg, "%.3f", dop[3]);
+    store_info(time, "VDOP", dop_msg); // vdop
 
     if (dop[0] <= 0.0 || dop[0] > opt->maxgdop)
     {
